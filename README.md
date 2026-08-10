@@ -40,7 +40,7 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 ## Getting Started
 
 #### 1. Clone the Repository
-`git clone [https://github.com/ilayigreenberg/n8n-ftp-automation-pipeline.git] (https://github.com/ilayigreenberg/n8n-ftp-automation-pipeline.git)  
+`git clone https://github.com/ilayigreenberg/n8n-ftp-automation-pipeline.git
 cd n8n-ftp-automation-pipeline`
 #### 2. Launch Container Stack
 Spin up the n8n and FTP containers defined in compose.yml: `docker compose up -d`  
@@ -48,6 +48,6 @@ Verify that all services are running cleanly: `docker compose ps`
 #### 3. Expose the Webhook
 In a separate terminal, expose port *5678* using ngrok: `ngrok http 5678`
 #### 4. Import Workflow to n8n
-   1. Open your browser and navigate to *[http://localhost:5678]*.
+   1. Open your browser and navigate to [http://localhost:5678].
    2. Import the *restaurant-pipeline.json* file.
    3. Activate the workflow (*Publish*)
