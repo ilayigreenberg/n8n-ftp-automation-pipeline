@@ -1,6 +1,6 @@
 # Multi-Container Local n8n Automation & FTP Data Pipeline
 
-An end-to-end local microservice and automation pipeline # built as part of a DevOps & Automation assignment. 
+An end-to-end local microservice and automation pipeline. 
 
 The pipeline ingests food and location search parameters via a public webhook endpoint (exposed through ngrok), fetches
 real-time restaurant data using SerpApi, cleanses and normalizes the JSON payload using custom JavaScript logic, and automatically provisions a structured JSON file onto an isolated local FTP server.
@@ -9,11 +9,11 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 ## System Architecture
 
-1. **Ingress Layer (ngrok):** Exposes the local n8n webhook listener to public HTTP POST requests.
-2. **Orchestration Layer (n8n in Docker):** Handles workflow execution, API requests, and data processing.
-3. **External API (SerpApi / Google Local Results):** Discovers top-matching culinary locations dynamically based on user input.
-4. **Data Normalization Engine (Code Node):** Parses free-form text operating hours, handles complex split-shift schedules, and normalizes schema structures.
-5. **Storage Layer (vsftpd FTP Server in Docker):** Receives and persists dynamically named output `.json` files inside an isolated volume.
+1. **Ingress Layer (ngrok & Webhook):** Accepts incoming HTTP POST requests from external clients through a secure ngrok tunnel and routes them to the local n8n Webhook node.
+2. **Orchestration Layer (n8n in Docker):** Manages pipeline execution, data transformations, and service interaction within an isolated Docker environment.
+3. **Data Harvesting & Egress Layer (SerpApi):** Discovers top-matching culinary locations dynamically based on user input.
+4. **Data Normalization Engine (Code Node):** Extracts the top 10 results, maps daily operating hours objects, applies fallback values for missing parameters (e.g., phone numbers), and restructures the payload into the required JSON schema.
+5. **Storage Layer (vsftpd FTP Server in Docker):** Persists normalized target `.json` files directly onto a local volume managed by an independent vsftpd container.
 
 ---
 
@@ -21,7 +21,7 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 ```text
 .
-├── docker-compose.yml       # Orchestration manifest for n8n & vsftpd services
+├── compose.yml              # Orchestration manifest for n8n & vsftpd services
 ├── workflow.json            # Exported production-ready n8n workflow pipeline
 ├── sample_output.json       # Validated FTP data payload ("Burgers in London")
 └── README.md                # Project documentation
