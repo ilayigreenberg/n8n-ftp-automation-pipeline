@@ -51,3 +51,14 @@ In a separate terminal, expose port *5678* using ngrok: `ngrok http 5678`
    1. Open your browser and navigate to *http://<span></span>localhost:5678*.
    2. Import the *restaurant-pipeline.json* file.
    3. Activate the workflow (*Publish*)
+      
+---
+
+## Usage Example
+
+Send an HTTP POST request to your ngrok public URL or local webhook endpoint:
+
+```bash
+curl -X POST https://YOUR_NGROK_URL/webhook/restaurants \
+  -H "Content-Type: application/json" \
+  -d '{"food_type": "Burgers", "city": "London"}'
