@@ -1,0 +1,144 @@
+{
+  "restaurants": [
+    {
+      "Name": "The Greens - Coffee & Plants",
+      "Address": "Am Krögel 2, 10179 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "10 AM–5 PM",
+        "Monday": "10 AM–5 PM",
+        "Tuesday": "10 AM–5 PM",
+        "Wednesday": "10 AM–5 PM",
+        "Thursday": "10 AM–5 PM",
+        "Friday": "10 AM–5 PM",
+        "Saturday": "10 AM–5 PM"
+      }
+    },
+    {
+      "Name": "Father Carpenter",
+      "Address": "Münzstraße 21, 10178 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "10 AM–5 PM",
+        "Monday": "9 AM–4 PM",
+        "Tuesday": "9 AM–4 PM",
+        "Wednesday": "9 AM–4 PM",
+        "Thursday": "9 AM–4 PM",
+        "Friday": "9 AM–4 PM",
+        "Saturday": "10 AM–5 PM"
+      }
+    },
+    {
+      "Name": "Káffee Büro",
+      "Address": "Wallstraße 38, 10179 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "9 AM–5 PM",
+        "Monday": "8 AM–5 PM",
+        "Tuesday": "8 AM–5 PM",
+        "Wednesday": "8 AM–5 PM",
+        "Thursday": "8 AM–5 PM",
+        "Friday": "8 AM–5 PM",
+        "Saturday": "9 AM–5 PM"
+      }
+    },
+    {
+      "Name": "Fauve Coffee Berlin",
+      "Address": "Neue Schönhauser Str. 8, 10178 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "Closed",
+        "Monday": "11 AM–6:30 PM",
+        "Tuesday": "11 AM–6:30 PM",
+        "Wednesday": "11 AM–6:30 PM",
+        "Thursday": "11 AM–6:30 PM",
+        "Friday": "11 AM–6:30 PM",
+        "Saturday": "11 AM–6:30 PM"
+      }
+    },
+    {
+      "Name": "BEN RAHIM Berlin",
+      "Address": "Sophienstraße 7A, 10178 Berlin, Germany",
+      "Phone": "+49 30 56002844",
+      "Working Hours": {
+        "Sunday": "8 AM–6 PM",
+        "Monday": "8 AM–6 PM",
+        "Tuesday": "8 AM–6 PM",
+        "Wednesday": "8 AM–6 PM",
+        "Thursday": "8 AM–6 PM",
+        "Friday": "8 AM–6 PM",
+        "Saturday": "8 AM–6 PM"
+      }
+    },
+    {
+      "Name": "Oslo Kaffebar",
+      "Address": "Eichendorffstraße 13, 10115 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "9 AM–7 PM",
+        "Monday": "8 AM–7 PM",
+        "Tuesday": "8 AM–7 PM",
+        "Wednesday": "8 AM–7 PM",
+        "Thursday": "8 AM–7 PM",
+        "Friday": "8 AM–7 PM",
+        "Saturday": "9 AM–7 PM"
+      }
+    },
+    {
+      "Name": "North Andes Coffee | Checkpoint Charlie",
+      "Address": "Charlottenstraße 77, 10117 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "9 AM–5 PM",
+        "Monday": "8 AM–6 PM",
+        "Tuesday": "8 AM–6 PM",
+        "Wednesday": "8 AM–6 PM",
+        "Thursday": "8 AM–6 PM",
+        "Friday": "8 AM–6 PM",
+        "Saturday": "9 AM–5 PM"
+      }
+    },
+    {
+      "Name": "LAP COFFEE",
+      "Address": "Rosenthaler Str. 62, 10119 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "9 AM–7 PM",
+        "Monday": "7:30 AM–7 PM",
+        "Tuesday": "7:30 AM–7 PM",
+        "Wednesday": "7:30 AM–7 PM",
+        "Thursday": "7:30 AM–7 PM",
+        "Friday": "7:30 AM–7 PM",
+        "Saturday": "9 AM–7 PM"
+      }
+    },
+    {
+      "Name": "Distrikt coffee",
+      "Address": "Bergstraße 68, 10115 Berlin, Germany",
+      "Phone": "N/A",
+      "Working Hours": {
+        "Sunday": "9 AM–4:30 PM",
+        "Monday": "8:30 AM–4 PM",
+        "Tuesday": "8:30 AM–4 PM",
+        "Wednesday": "8:30 AM–4 PM",
+        "Thursday": "8:30 AM–4 PM",
+        "Friday": "8:30 AM–4 PM",
+        "Saturday": "9 AM–4:30 PM"
+      }
+    },
+    {
+      "Name": "THE BARN Café Mitte",
+      "Address": "Auguststraße 58, 10119 Berlin, Germany",
+      "Phone": "+49 30 44046292",
+      "Working Hours": {
+        "Sunday": "10 AM–6 PM",
+        "Monday": "8 AM–6 PM",
+        "Tuesday": "8 AM–6 PM",
+        "Wednesday": "8 AM–6 PM",
+        "Thursday": "8 AM–6 PM",
+        "Friday": "8 AM–6 PM",
+        "Saturday": "9 AM–6 PM"
+      }
+    }
+  ]
+}

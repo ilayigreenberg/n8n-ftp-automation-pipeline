@@ -1,0 +1,129 @@
+{
+  "name": "restaurant-pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nlet places = [];\n\n// in case the information arrives split or as a single list\nif (items.length === 1 && items[0].json.local_results) {\n  places = items[0].json.local_results;\n} else {\n  places = items.map(item => item.json);\n}\n\n// --- start\n\n// takes top 10 places and normalizes\nconst restaurants = places.slice(0, 10).map(place => {\n\n  const days = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"];\n\n  const working_hours = place.operating_hours ? days.reduce((obj, day) => {\n    if (place.operating_hours[day.toLowerCase()]) {\n      obj[day] = place.operating_hours[day.toLowerCase()];\n    }\n    return obj;\n  }, {}) : null;\n  \n  return {\n    \"Name\": place.title,\n    \"Address\": place.address,\n    \"Phone\": place.phone || \"N/A\",\n    \"Working Hours\": working_hours\n  };\n});\n\n\nreturn [{ json: {restaurants}}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        368,
+        144
+      ],
+      "id": "91a0fcf0-d026-4ab3-a2ef-00168e32db08",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "path": "={{ ($('Webhook1').item.json.body.food_type + '_in_' + $('Webhook1').item.json.body.city).replace(/\\s+/g, '-').replace(/['\"]/g, '') }}.json",
+        "binaryData": false,
+        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.ftp",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        144
+      ],
+      "id": "58386b28-1bd7-46f4-b07c-d9394690a31c",
+      "name": "FTP",
+      "credentials": {
+        "ftp": {
+          "id": "qDNEqU8Bb0YKO4U2",
+          "name": "FTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "google_maps",
+        "q": "={{$json.body.food_type}} in {{ $json.body.city }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApi",
+      "typeVersion": 1,
+      "position": [
+        128,
+        144
+      ],
+      "id": "35206ef0-bc23-401a-ad28-5faa8f2ade32",
+      "name": "Google_maps search",
+      "credentials": {
+        "serpApi": {
+          "id": "byGX3YDU5U9z8Fkt",
+          "name": "SerpApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "restaurants",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -160,
+        144
+      ],
+      "id": "67c1ea32-dc1b-4d04-bfd2-f4aa5cc8c650",
+      "name": "Webhook1",
+      "webhookId": "077296d0-9aa7-49ed-a3ad-ed5b98acd03f"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "FTP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google_maps search": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Google_maps search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "3493fb5d-0cdf-4b6a-a3dc-19aec0196a9d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fb345051e9d9669d83cc87b2ec20efeafeec150dd4d3453d3ac51ec4e29ee199"
+  },
+  "nodeGroups": [],
+  "id": "NKwwM8lsYGfgdUxF",
+  "tags": []
+}
