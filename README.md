@@ -39,18 +39,18 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 ## Getting Started
 
-1. *Clone the Repository*
+#### 1. Clone the Repository
 `git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
 cd YOUR_REPO_NAME`
-2. *Launch Container Stack*
+#### 2. Launch Container Stack
 Spin up the n8n and FTP containers defined in docker-compose.yml:
 `docker compose up -d`
 Verify that all services are running cleanly:
 `docker compose ps`
-3. *Expose the Webhook*
+#### 3. Expose the Webhook
 In a separate terminal, expose port 5678 using ngrok:
 `ngrok http 5678`
-4. *Import Workflow to n8n*
+#### 4. Import Workflow to n8n
    1. Open your browser and navigate to http://localhost:5678.
    2. Import the `restaurant-pipeline.json` file.
    3. Activate the workflow (`Publish`)
