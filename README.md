@@ -41,7 +41,7 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 #### 1. Clone the Repository
 `git clone [https://github.com/ilayigreenberg/n8n-ftp-automation-pipeline.git](https://github.com/ilayigreenberg/n8n-ftp-automation-pipeline.git)
-cd YOUR_REPO_NAME`
+cd n8n-ftp-automation-pipeline`
 #### 2. Launch Container Stack
 Spin up the n8n and FTP containers defined in compose.yml: `docker compose up -d`  
 Verify that all services are running cleanly: `docker compose ps`
