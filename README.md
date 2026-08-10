@@ -21,7 +21,7 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 ```text
 .
-├── compose.yml              # Orchestration manifest for n8n & vsftpd services
-├── workflow.json            # Exported production-ready n8n workflow pipeline
-├── sample_output.json       # Validated FTP data payload ("Burgers in London")
-└── README.md                # Project documentation
+├── compose.yml                    # Orchestration manifest for n8n & vsftpd services
+├── restaurant-pipeline.json       # Exported production-ready n8n workflow pipeline
+├── sample_output.json             # Validated FTP data payload ("Burgers in London")
+└── README.md                      # Project documentation
