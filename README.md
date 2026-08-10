@@ -25,3 +25,8 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 ├── restaurant-pipeline.json       # Exported production-ready n8n workflow pipeline
 ├── sample_output.json             # Validated FTP data payload ("Burgers in London")
 └── README.md                      # Project documentation
+
+## Prerequisites
+Docker & Docker Compose V2
+Ubuntu 24.04 LTS (WSL2 / VM environment)
+ngrok account & CLI configured
