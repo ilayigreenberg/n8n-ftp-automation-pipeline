@@ -34,3 +34,19 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 - Docker & Docker Compose V2
 - Ubuntu 24.04 LTS (WSL2 / VM environment)
 - ngrok account & CLI configured
+
+---
+
+## Getting Started
+
+1. Clone the Repository
+`git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+cd YOUR_REPO_NAME`
+_2. Launch Container Stack_
+```
+Spin up the n8n and FTP containers defined in docker-compose.yml:
+`docker compose up -d`
+Verify that all services are running cleanly:
+`docker compose ps`
+```
+*3. Expose the Webhook*
