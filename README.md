@@ -23,7 +23,7 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 .
 ├── compose.yml                    # Orchestration manifest for n8n & vsftpd services
 ├── restaurant-pipeline.json       # Exported production-ready n8n workflow pipeline
-├── Burgers_in_Paris.json          # Validated FTP data payload
+├── sample_output.json             # Validated FTP data payload (Coffee_in_Berlin)
 └── README.md                      # Project documentation
 ```
 
@@ -66,4 +66,4 @@ curl -X POST https://YOUR_NGROK_URL/webhook/restaurants \
 
 #### Result:
 
-The workflow automatically queries SerpApi, normalizes the data, and deposits a generated file (e.g., Burgers_in_Paris.json) into the local FTP storage directory (./ftp-data/YOUR_USERNAME/).
+The workflow automatically queries SerpApi, normalizes the data, and deposits a generated file (e.g., Coffee_in_Berlin.json) into the local FTP storage directory (./ftp-data/YOUR_USERNAME/).
