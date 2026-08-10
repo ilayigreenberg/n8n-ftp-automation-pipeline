@@ -61,4 +61,7 @@ Send an HTTP POST request to your ngrok public URL or local webhook endpoint:
 ```bash
 curl -X POST https://YOUR_NGROK_URL/webhook/restaurants \
   -H "Content-Type: application/json" \
-  -d '{"food_type": "Burgers", "city": "London"}'
+  -d '{"food_type": "Burgers", "city": "Paris"}'
+```
+##### Result:
+The workflow automatically queries SerpApi, normalizes the data, and deposits a generated file (e.g., Burgers_in_Paris.json) into the local FTP storage directory (./ftp-data/YOUR_USERNAME/).
