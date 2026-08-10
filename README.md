@@ -31,6 +31,6 @@ real-time restaurant data using SerpApi, cleanses and normalizes the JSON payloa
 
 ## Prerequisites
 
-* Docker & Docker Compose V2
++ Docker & Docker Compose V2
 + Ubuntu 24.04 LTS (WSL2 / VM environment)
 - ngrok account & CLI configured
